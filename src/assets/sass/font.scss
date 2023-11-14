@@ -17,12 +17,12 @@ $black              : #000000;
     text-transform: $value;
 }
 
-
 // page all font-family 
-$regular            : "Segoeui";
-$bold               : "Segoeui-bold";
-$semibold           : "Segoeui-semibold";
-$helveticalight     : "Helvetica-light";
+$poppinsRegular: "Poppins";
+$regular            : "Ginóra";
+$thin            : "Ginóra-thin";
+$bold               : "Ginóra-bold";
+$semibold           : "Ginóra-semibold";
 
 
 
@@ -47,23 +47,29 @@ $size53             : 53px;
 /* fonts starts */
 
 @font-face {
+    font-family: $poppinsRegular;   
+    src: url("fonts/poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
     font-family: $regular;   
-    src: url("fonts/Segoeui/segoeui-regular.ttf");
+    src: url("fonts/ginora-sans-cufonfonts/Ginóra-Sans-Regular.otf");
+}
+
+@font-face {
+    font-family:$thin;   
+    src: url("fonts/ginora-sans-cufonfonts/Ginóra-Sans-Light.otf");
 }
 
 @font-face {
     font-family:$bold;   
-    src: url("fonts/Segoeui/segoeui-bold.ttf");
+    src: url("fonts/ginora-sans-cufonfonts/Ginóra-Sans-Bold.otf");
 }
 
 @font-face {
     font-family:$semibold;   
-    src: url("fonts/Segoeui/segoeui-semibold.ttf");
+    src: url("fonts/ginora-sans-cufonfonts/Ginóra-Sans-Semi-Bold.otf");
 }
 
-@font-face {
-    font-family:$helveticalight;   
-    src: url("fonts/Helvetica/HelveticaNeueCyr-Light.otf");
-}
 
 /* fonts ends */

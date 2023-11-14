@@ -3,28 +3,30 @@
                     =    main scripts starts   =
 =====================================================
 */
-$(document).ready(function(){
-    var subForm='<form action="">'
-                    +'<div class="form-group">'
-                    +    '<input class="form-control main-comment" type="text" pattern="[A-Za-z]{3}" />'
-                    +'</div>'
-                    +'<button class="btn btn-primary send-main-comment" type="button">'
-                    +    'send'
-                    +'</button>'
-                +'</form><div class="clearfix"></div>'
+$(window).on("load", function () {
 
-    $( ".send-main-comment" ).click(function() {
-        if($.trim($(this).parent().find(".main-comment").val()) ){
-            $(this).parents('.comments').children('.main').append( "<p>"+$(this).parent().find(".main-comment").val()   +"</p>" );
-            $(".main-comment").val('');
-        }
-    });
+    $(".loader-wrapper").fadeOut(1000)
+})
 
+$(window).scroll(function () {
+  var header = $("header");
+  $(window).scrollTop() > 80
+    ? header.addClass("scrolled")
+    : header.removeClass("scrolled");
+});
 
-    // $( ".send-sub-comment" ).click(function() {
-    //     if($.trim($(".sub-comment").val()) ){
-    //         $(this).parents('.main').children('.sub').append( "<p>"+$(this).parent().find(".sub-comment").val()+"</p>" );
-    //         $(".sub-comment").val('');
-    //     }
-    // });
+let timer;
+$("form").keyup(function () {
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    var emailValue = $("input[name=email]").val(),
+      nameValue = $("input[name=name]").val(),
+      messageValue = $("input[name=message]").val(),
+      isEmailValid = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(emailValue),
+      isFormValid = Boolean(
+        isEmailValid && emailValue && nameValue && messageValue
+      );
+
+    $("form button").prop("disabled", !isFormValid);
+  }, 400);
 });

@@ -8,9 +8,7 @@
     "gulp": "gulp"
   },
   "authors": [
-    "İsmayıllı Zaur",
-    "Talbov Cavidan",
-    "Ruslanova Nuriyya"
+    "Talbov Cavidan"
   ],
   "license": "ISC",
   "devDependencies": {
